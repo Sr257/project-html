@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <select id="country_value">
+            <option value="India">India</option>
+            <option value="United states of america">United States of America</option>
+            <option value="Nepal">Nepal</option>
+            <option value="Australia">Australia</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="South Africa">south Africa</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Mexico">mexico</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Canada">canada</option>
+            <option value="singapore">singapore</option>
+            <option value="sweden">sweden</option>
+        </select>
+        <button onclick="myfunction()">Find continent</button>
+    </div>
+    <script>
+        function myfunction(){
+            let continent;
+            let country=document.getElementById("country_value").value;
+            switch(country)
+            {
+                case "India":
+                case "China":
+                case "Nepal":
+                case "singapore":
+                    continent="Asia";
+                    break;
+                case "United states of america":
+                case "Mexico":
+                case "Canada":
+                    continent="North America";
+                    break;
+                case "Argentina":
+                case "Brazil":
+                    continent="south America";
+                    break;
+                case "Australia":
+                    continent="Australia";
+                    break;
+                case "sweden":
+                case "Germany":
+                case "France":
+                    continent="Europe";
+                    break;
+                case "South Africa":
+                case "Nigeria":
+                    continent="Nigeria";
+                    break;
+                    default:
+                        continent="unknown";
+            }
+            alert(`The continent is ${continent}`);
+        }
+    </script>
+    
+</body>
+</html>

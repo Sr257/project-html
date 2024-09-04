@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exponent Calculator</title>
+</head>
+<body>
+    <input type="number" placeholder="Enter the base number" id="myname" value="">
+    <input type="number" placeholder="Enter the exponent" id="name" value="">
+    <button onclick="myfunction()">Click here to find exponent!</button>
+    <p id="tag">Show output here</p>
+    
+    <script>
+        function myfunction(){
+            let result = 1;
+            let base = parseFloat(document.getElementById("myname").value);
+            let exponent = parseInt(document.getElementById("name").value);
+            for(let i = 1; i <= exponent; i++) {
+                result *= base;
+            }
+            document.getElementById("tag").innerText = `${result}`;
+            console.log(result);
+        }
+    </script>
+</body>
+</html>

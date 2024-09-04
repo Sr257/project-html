@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            
+        }
+        
+        #container{
+            border:5px solid black;
+            text-align: center;
+            width:50%;
+            background-color: aquamarine;
+            color:black;
+            margin: 30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <form id="container">
+        <h1>Check your BMI</h1>
+        <p>Enter your height and weight below to check your BMI results</p>
+        <label for="weight">Put your weight here in (KG)</label><br>
+        <input type="number" id="weight" name="weight" placeholder="enter a weight"><br>
+        <label for="height">Put your height here in (CM)</label><br>
+        <input type="number" id="height" name="height" placeholder="enter a height"><br>
+        <label for="calculate">Calculate BMI</label><br>
+        <input type="submit" name="calculate" value="calculate BMI">
+        <h4 id="output"> </h4>
+    </form>
+    
+    
+</body>
+<script>
+    document.querySelector("form").addEventListener("submit",function(event){
+        event.preventDefault();
+        let height=document.getElementById("height").value/100;
+        let weight=document.getElementById("weight").value;
+        let calculateBMI=(weight)/(height*height);
+        document.getElementById("output").innerText=`${calculateBMI}`
+        if(calculateBMI<=18.4){
+            document.getElementById("output").innerText= `your BMI is ${calculateBMI} which means your under weight`;
+        }
+            else if(calculateBMI>=18.5&&calculateBMI<=24.9){
+                document.getElementById("output").innerText= `your BMI is ${calculateBMI} which means your Normal weight`;
+        }
+        else if(calculateBMI>=25&&calculateBMI<=29.9){
+            document.getElementById("output").innerText= `your BMI is ${calculateBMI} which means your Over weight`;
+        }
+        else{
+            document.getElementById("output").innerText= `your BMI is ${calculateBMI} which means your obese`;
+        }
+        
+        
+        
+    })
+
+</script>
+</html>

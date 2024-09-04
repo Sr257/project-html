@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="first" placeholder="enter a 1st number" value="">
+    <input type="number" id="second" placeholder="enter a 2nd number" value="">
+    <h3 id="out">show the output here</h3>
+    <hr>
+    <button onclick="addition()">ADD</button>
+    <button onclick="substraction()">sub</button>
+    <button onclick="division()">divide</button>
+    <button onclick="multiplication()">multiply</button>
+    
+    
+</body>
+</html>
+<script>
+    
+    function addition(){
+        let number1=parseFloat(document.getElementById("first").value);
+        let number2=parseFloat(document.getElementById("second").value);
+        let result = number1 + number2;
+        document.getElementById("out").innerText = `Result: ${result}`;
+    }
+    function substraction(){
+        let number1=parseFloat(document.getElementById("first").value);
+        let number2=parseFloat(document.getElementById("second").value);
+        let result = number1 - number2;
+        document.getElementById("out").innerText = `Result: ${result}`;
+    }
+    function multiplication(){
+        let number1=parseFloat(document.getElementById("first").value);
+        let number2=parseFloat(document.getElementById("second").value);
+        let result = number1 * number2;
+        document.getElementById("out").innerText = `Result: ${result}`;
+    }
+    function division(){
+        let number1=parseFloat(document.getElementById("first").value);
+        let number2=parseFloat(document.getElementById("second").value);
+        let result = number1 / number2;
+        document.getElementById("out").innerText = `Result: ${result}`;
+    }
+
+</script>
